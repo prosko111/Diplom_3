@@ -1,13 +1,16 @@
-import io.qameta.allure.junit4.DisplayName;
-import pageobject.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.PasswordRecoveryPage;
+import pageobject.RegisterPage;
 
-import static pageobject.LoginPage.*;
 import static com.codeborne.selenide.Selenide.*;
+import static pageobject.LoginPage.*;
 
 public class LoginTest {
 

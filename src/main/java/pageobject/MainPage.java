@@ -5,7 +5,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 
 public class MainPage {
 
@@ -76,7 +77,6 @@ public class MainPage {
     public SelenideElement getOrderButton() {
         return orderButton;
     }
-
 
     public SelenideElement getFillingsTab() {
         return fillingsTab;

@@ -1,22 +1,25 @@
-import io.qameta.allure.junit4.DisplayName;
-import pageobject.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.PersonalAccountPage;
+import pageobject.RegisterPage;
 
-import static pageobject.LoginPage.*;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static pageobject.LoginPage.*;
 
 public class PersonalAccountPageTest {
 
     PersonalAccountPage personalAccountPage = page(PersonalAccountPage.class);
 
     @BeforeClass
-    public static void setUpAll(){
+    public static void setUpAll() {
         Configuration.startMaximized = true;
 
         RegisterPage registerPage = open(urlRegistration, RegisterPage.class);
@@ -27,7 +30,7 @@ public class PersonalAccountPageTest {
     }
 
     @Before
-    public void setUp(){
+    public void setUp() {
         LoginPage loginPage = open(urlLogin, LoginPage.class);
         loginPage.fillEmailFieldOnLoginPage(email);
         loginPage.fillPasswordFieldOnLoginPage(password);
@@ -41,7 +44,7 @@ public class PersonalAccountPageTest {
 
     @Test
     @DisplayName("Переход в личный кабинет по клику на кнопку 'Личный кабинет'")
-    public void checkRedirectFromMainPageToPersonalAccountPageByPersonalAccountButton(){
+    public void checkRedirectFromMainPageToPersonalAccountPageByPersonalAccountButton() {
         MainPage mainPage = page(MainPage.class);
         mainPage.pressPersonalAccountButton();
 
@@ -68,7 +71,7 @@ public class PersonalAccountPageTest {
 
     @Test
     @DisplayName("Выход из аккаунта в личном кабинете")
-    public void userCanExitFromPersonalWebPage(){
+    public void userCanExitFromPersonalWebPage() {
         MainPage mainPage = page(MainPage.class);
         mainPage.pressPersonalAccountButton();
 

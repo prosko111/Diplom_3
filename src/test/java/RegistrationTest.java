@@ -1,14 +1,14 @@
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.RegisterPage;
-import com.codeborne.selenide.Condition;
-import org.junit.Before;
-import org.junit.Test;
 
-import static pageobject.RegisterPage.*;
 import static com.codeborne.selenide.Selenide.*;
+import static pageobject.RegisterPage.*;
 
 public class RegistrationTest {
 
@@ -16,7 +16,7 @@ public class RegistrationTest {
     LoginPage loginPage = page(LoginPage.class);
 
     @Before
-    public void setUp(){
+    public void setUp() {
         MainPage mainPage = open(url, MainPage.class);
         mainPage.pressLoginButtonOnMainPage();
 
@@ -35,7 +35,7 @@ public class RegistrationTest {
 
     @Test
     @DisplayName("Регистрация")
-    public void successfulRegistration(){
+    public void successfulRegistration() {
         registerPage.fillPasswordFieldOnRegisterPage(password);
         registerPage.pressRegisterButtonOnRegisterPage();
 
@@ -44,7 +44,7 @@ public class RegistrationTest {
 
     @Test
     @DisplayName("Регистрация с некорректным паролем")
-    public void anErrorAppearsIfPasswordIsWrong(){
+    public void anErrorAppearsIfPasswordIsWrong() {
         registerPage.fillPasswordFieldOnRegisterPage(shortPassword);
         registerPage.pressRegisterButtonOnRegisterPage();
         registerPage.getErrorFieldOnRegistrationPage().shouldHave(Condition.exactText("Некорректный пароль"));

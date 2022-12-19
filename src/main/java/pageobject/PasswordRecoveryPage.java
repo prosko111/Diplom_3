@@ -12,7 +12,7 @@ public class PasswordRecoveryPage {
     private SelenideElement loginButtonOnPasswordRecoveryPage;
 
     @Step("Клик на кнопку логина")
-    public void pressLoginButtonOnPasswordRecoveryPage(){
+    public void pressLoginButtonOnPasswordRecoveryPage() {
         loginButtonOnPasswordRecoveryPage.click();
     }
 }

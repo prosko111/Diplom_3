@@ -1,12 +1,13 @@
-import io.qameta.allure.junit4.DisplayName;
-import pageobject.*;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Before;
 import org.junit.Test;
+import pageobject.MainPage;
 
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 import static pageobject.MainPage.url;
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
 
 public class ConstructorTest {
 
